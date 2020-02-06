@@ -1,0 +1,9 @@
+{
+    "template": "post_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "/(<div class=\"message-lastEdit.*\">)(?:.*)(<\\/div>)/sU",
+    "replace": "$1\n{{ phrase('liamw_lasteditusername_last_edited_by_x:', {'name': username_link($post.LastEditor)}) }} <xf:date time=\"{$post.last_edit_date}\" />\n$2"
+}
